@@ -1,9 +1,10 @@
 import React from 'react';
+import './styled.scss';
 
 function Footer() {
     return (
         <>
-            <h2>Footer</h2>
+            <h2 className="footer">Footer</h2>
         </>
     );
 }

@@ -1,9 +1,10 @@
 import React from 'react';
+import './styled.scss';
 
 function Header() {
     return (
         <>
-            <h2>Header</h2>
+            <h2 className="header">Header</h2>
         </>
     );
 }
