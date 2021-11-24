@@ -11,5 +11,23 @@
         .header--title h1 {
             font-family: 'Praise', cursive;
         }
+
+        .header--search {
+            padding: 0;
+            border-bottom: 2px solid rgb(41, 39, 39);
+            display: flex;
+            justify-content: left;
+            align-items: flex-start;
+
+            input {
+                background: transparent;
+                border: none;
+                padding: 15px 15px 5px 10px;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
     }
 }
