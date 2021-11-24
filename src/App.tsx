@@ -1,16 +1,18 @@
 import React from 'react';
 import './App.css';
-import Header from './Components/MainComponents/Header';
-import Footer from './Components/MainComponents/Footer';
-import Album from './Components/MainComponents/Album';
+import './App.scss';
+
+import Header from './Components/partials/Header';
+import Footer from './Components/partials/Footer';
+import Album from './Components/partials/Album';
 
 function App() {
   return (
-    <>
+    <div className="areaGeral">
       <Header />
       <Album />
       <Footer />
-    </>
+    </div>
   );
 }
 
