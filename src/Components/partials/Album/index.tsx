@@ -3,15 +3,18 @@ import './styled.scss';
 
 function App() {
   const photo:any = [];
+  const photographer:any = [];
   const [images, setImages] = useState([]);
-  const [imagens, setImagens] = useState([])
+  const [imagens, setImagens] = useState<any>([]);
+  const [ author, setAuthor] = useState([]);
 
   useEffect(()=>{
     function getPhotos (images:any) {
       images.map ((image:any) => { 
-      photo.push(image.src.original)
+      photo.push(image)
       }) 
       setImagens(photo)
+      console.log(images)
     }
      fetch("https://api.pexels.com/v1/search?query=people",{
        headers: {
@@ -30,10 +33,13 @@ function App() {
     <>
       <div className="Album">
         {photo && 
-          imagens.map((i,k)=>
-            <img src={i} />
+          imagens.map((i:any,k:any)=>
+          <>
+            <img src={i.src.original} />
+            <p>{i.photographer}</p>
+          </>  
           )
-        }
+        }    
       </div>     
     </>
   );
