@@ -34,10 +34,10 @@ function App() {
       <div className="Album">
         {photo && 
           imagens.map((i:any,k:any)=>
-          <>
+          <div className="photos" key={k}>
             <img src={i.src.original} />
             <p>{i.photographer}</p>
-          </>  
+          </div>  
           )
         }    
       </div>     
