@@ -6,10 +6,12 @@ import Album from './Components/partials/Album';
 
 function App() {
   return (
-    <div className="areaGeral">
-      <Header />
-      <Album />
-      <Footer />
+    <div className="generalArea">
+      <div className="contentArea">
+        <Header />
+        <Album />
+        <Footer />
+      </div>
     </div>
   );
 }

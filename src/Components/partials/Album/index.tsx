@@ -35,8 +35,10 @@ function App() {
         {photo && 
           imagens.map((i:any,k:any)=>
           <div className="photos" key={k}>
-            <img src={i.src.original} />
-            <p>{i.photographer}</p>
+            <div className="photos--desc">
+              <img src={i.src.original} />
+              <p>{i.photographer}</p>
+            </div>
           </div>  
           )
         }    
