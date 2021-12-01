@@ -37,7 +37,7 @@ function App() {
           <div className="photos" key={k}>
             <div className="photos--desc">
               <img src={i.src.original} />
-              <p>{i.photographer}</p>
+              <p><a href={i.photographer_url} target="_blank">{i.photographer}</a></p>
             </div>
           </div>  
           )

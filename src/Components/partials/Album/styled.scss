@@ -26,13 +26,17 @@
                 justify-content: center;
                 align-items: center;
                 background-color: rgba(131, 130, 130, 0.3);
-                color: #fff;
                 padding:5px 0px;
                 margin-top: -33px;
                 font-size: 20px;
                 border-bottom-left-radius: 10px;
                 border-bottom-right-radius: 10px;
                 transition: all ease 0.8s;
+
+                a {
+                    text-decoration: none;
+                    color: #fff;
+                }
             }
 
             &:hover {
@@ -43,6 +47,7 @@
                 p {
                     display: flex;
                     width: 90%;
+
                 }
             }
         }
