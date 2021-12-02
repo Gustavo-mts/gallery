@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+
 .Album {
     padding: 20px 0px 0px 30px;
     width: 100%;
+    padding-left: 80px;
+    padding-top: 60px;
+
     .photos {
         display: inline-block;
         
@@ -28,6 +33,7 @@
                 background-color: rgba(131, 130, 130, 0.1);
                 padding:5px 0px;
                 margin-top: -33px;
+                font-family: 'Outfit', sans-serif;
                 font-size: 20px;
                 opacity: 0;
                 border-bottom-left-radius: 10px;
