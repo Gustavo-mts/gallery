@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import LazyLoad from 'react-lazyload';
 import './styled.scss';
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
       setImagens(photo)
       console.log(images)
     }
-     fetch("https://api.pexels.com/v1/search?query=people",{
+      fetch("https://api.pexels.com/v1/search?query=people",{
        headers: {
         Authorization: '563492ad6f91700001000001623b9853bf6e460eb6ef3ad569eb07e8'
        }
@@ -35,10 +36,12 @@ function App() {
         {photo && 
           imagens.map((i:any,k:any)=>
           <div className="photos" key={k}>
-            <div className="photos--desc">
-              <img src={i.src.original} />
-              <p><a href={i.photographer_url} target="_blank">{i.photographer}</a></p>
-            </div>
+            <LazyLoad>
+              <div className="photos--desc">
+                <img src={i.src.original} />
+                <p><a href={i.photographer_url} target="_blank">{i.photographer}</a></p>
+              </div>
+            </LazyLoad>
           </div>  
           )
         }    
