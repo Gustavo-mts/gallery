@@ -10,7 +10,7 @@ function App() {
     <div className="generalArea">
       <div className="contentArea">
         <Header />
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div>Loading images...</div>}>
           <Album />
         </Suspense>
         <Footer />

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import LazyLoad from 'react-lazyload';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 import './styled.scss';
 
 function App() {
@@ -36,12 +37,15 @@ function App() {
         {photo && 
           imagens.map((i:any,k:any)=>
           <div className="photos" key={k}>
-            <LazyLoad>
               <div className="photos--desc">
-                <img src={i.src.original} />
+                <LazyLoadImage
+                  src={i.src.original}   
+                  effect="blur" 
+                  width="250px"
+                  height="250px"
+                />
                 <p><a href={i.photographer_url} target="_blank">{i.photographer}</a></p>
               </div>
-            </LazyLoad>
           </div>  
           )
         }    
