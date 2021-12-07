@@ -4,47 +4,66 @@
     padding: 20px 0px 0px 30px;
     width: 100%;
     margin-bottom: 20px;
-    padding-left: 80px;
+    padding-left: 100px;
     padding-top: 60px;
     border-bottom: 1px solid #ccc;
 
     .photos {
         display: inline-block;
         
-
         .photos--desc {
-            width: 290px;
-            height: 290px;
+            width: 250px;
+            height: 250px;
             display: flex;
             flex-direction: column;
             align-items: center;
             margin-right: 20px;
             margin-bottom: 20px;
 
-            p {
-                display: none;
+
+            .photos--desc-photo {
+                width: 90%;
+                height: 90%;
+                transition: all ease 0.7s;
+                display: flex;
                 justify-content: center;
                 align-items: center;
-                background-color: rgba(82, 79, 79, 0.7);
+            }
+
+            p {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: rgba(44, 43, 43, 0.2);
+                opacity: 0;
                 padding:5px 0px;
                 margin-top: -34px;
                 font-family: 'Outfit', sans-serif;
                 font-size: 20px;
-                transition: all ease 0.8s;
+                transition: all ease 1.2s;
 
                 a {
-                    text-decoration: none;
+                    display: none;
                     color: #fff;
+                    text-decoration: none;                   
                 }
             }
 
             &:hover {
-                
+
+                .photos--desc-photo {
+                    width: 100%;
+                    height: 100%;
+                }
+
                 p {
-                    display: flex;
                     z-index: 99;
                     width: 250px;
                     opacity: 1;
+                }
+
+                a {
+                    display: block;
                 }
             }
         }

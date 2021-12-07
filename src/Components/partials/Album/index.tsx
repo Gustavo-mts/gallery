@@ -38,12 +38,14 @@ function App() {
           imagens.map((i:any,k:any)=>
           <div className="photos" key={k}>
               <div className="photos--desc">
-                <LazyLoadImage
-                  src={i.src.original}   
-                  effect="blur" 
-                  width="250px"
-                  height="250px"
-                />
+                <div className="photos--desc-photo">
+                  <LazyLoadImage
+                    src={i.src.original}   
+                    effect="blur" 
+                    width="100%"
+                    height="100%"
+                  />
+                </div>
                 <p><a href={i.photographer_url} target="_blank">{i.photographer}</a></p>
               </div>
           </div>  
@@ -55,3 +57,6 @@ function App() {
 }
 
 export default App;
+
+
+// olhar responsividade do lazyloadImage
