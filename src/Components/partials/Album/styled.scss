@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
 
+$small: '500px';
+$medium: '900px';
+
 .Album {
     padding: 20px 0px 0px 30px;
     width: 100%;
@@ -31,6 +34,7 @@
             }
 
             p {
+                width: 250px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -58,7 +62,6 @@
 
                 p {
                     z-index: 99;
-                    width: 250px;
                     opacity: 1;
                 }
 
@@ -67,6 +70,25 @@
                 }
             }
         }
-        
+    }
+
+    @media screen and (max-width: $small) {
+        padding-left: 10%;
+
+        .photos {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .photos--desc {
+                width: 200px;
+                height: 200px;
+
+                p {
+                    width: 200px;
+                }    
+            }
+        }
     }
 }
