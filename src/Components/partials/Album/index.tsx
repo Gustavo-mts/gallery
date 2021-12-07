@@ -57,6 +57,3 @@ function App() {
 }
 
 export default App;
-
-
-// olhar responsividade do lazyloadImage
