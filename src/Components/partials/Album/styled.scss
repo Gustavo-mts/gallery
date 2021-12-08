@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
 
-$small: '500px';
-$medium: '900px';
-
 .Album {
     padding: 20px 0px 0px 30px;
     width: 100%;
@@ -44,12 +41,12 @@ $medium: '900px';
                 margin-top: -34px;
                 font-family: 'Outfit', sans-serif;
                 font-size: 20px;
-                transition: all ease 1.2s;
+                transition: all ease 0.5s;
 
                 a {
                     display: none;
                     color: #fff;
-                    text-decoration: none;                   
+                    text-decoration: none;               
                 }
             }
 
@@ -72,27 +69,32 @@ $medium: '900px';
         }
     }
 
-    @media screen and (max-width: $small) {
-        padding-left: 10%;
+    @media screen and (max-width: "600px") {
+        padding-left: 10px;
 
         .photos {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            margin-bottom: 20px;
+            margin-top: 0px;
 
             .photos--desc {
-                width: 200px;
-                height: 200px;
+                width: 80%;
+                height: auto;
+                margin-bottom: 0px;
 
                 p {
-                    width: 200px;
+                    width: 100%;
+                    font-size: 12px;
+                    margin-top: -30px;
                 }    
             }
         }
     }
 
-    @media screen and (max-width: $medium) {
+    /*@media screen and (max-width: "900px") {
         padding-left: 12%;
 
         .photos {
@@ -107,5 +109,5 @@ $medium: '900px';
                 }
             }
         }
-    }
+    }*/
 }

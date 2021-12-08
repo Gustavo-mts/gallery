@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Praise&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap');
 
-$small: '500px';
+$small: '600px';
 $medium: '900px';
 
 .header {
@@ -12,7 +12,7 @@ $medium: '900px';
         align-items: center;
 
         .header--title h1 {
-            font-family: 'Praise', cursive;
+            font-family: 'Playfair Display', serif;
         }
 
         .header--search {
@@ -45,7 +45,7 @@ $medium: '900px';
             }
 
             .header--search {
-                width: 120%;
+                width: 100%;
             }
         }
     }
