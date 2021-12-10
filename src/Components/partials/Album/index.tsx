@@ -6,9 +6,9 @@ import './styled.scss';
 function App() {
   const photo:any = [];
   const photographer:any = [];
-  const [images, setImages] = useState([]);
+  const [images, setImages] = useState<any>([]);
   const [imagens, setImagens] = useState<any>([]);
-  const [ author, setAuthor] = useState([]);
+  const [ author, setAuthor] = useState<any>([]);
 
   useEffect(()=>{
     function getPhotos (images:any) {
@@ -57,3 +57,8 @@ function App() {
 }
 
 export default App;
+
+/*
+-- passar a requisição para async/await
+-- adicionar loading
+*/
