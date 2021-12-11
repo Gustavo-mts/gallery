@@ -1,40 +1,37 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import './styled.scss';
 
+import { api } from '../../services/api';
+
 function App() {
   const photo:any = [];
-  const photographer:any = [];
-  const [images, setImages] = useState<any>([]);
   const [imagens, setImagens] = useState<any>([]);
-  const [ author, setAuthor] = useState<any>([]);
+
+  const [loading, setLoading] = useState<Boolean>(false);
 
   useEffect(()=>{
-    function getPhotos (images:any) {
-      images.map ((image:any) => { 
-      photo.push(image)
-      }) 
-      setImagens(photo)
-      console.log(images)
-    }
-      fetch("https://api.pexels.com/v1/search?query=people",{
-       headers: {
-        Authorization: '563492ad6f91700001000001623b9853bf6e460eb6ef3ad569eb07e8'
-       }
-     })
-     .then(resp => {
-        return resp.json()
-     })
-     .then(data => {
-      getPhotos(data.photos);
-     })
-  }, [])
+    AllPhotos();
+  }, []);
+
+  const AllPhotos = async () => {
+    setLoading(true);
+    let json = await api.getAllPhotos();   
+    json.photos.map((i: any)=> {
+      photo.push(i);
+    });
+    setImagens(photo);
+    setLoading(false);
+  }
 
   return (
     <>
       <div className="Album">
-        {photo && 
+        {loading &&
+          <div className="loading">Loading..</div>
+        }
+        {!loading && 
           imagens.map((i:any,k:any)=>
           <div className="photos" key={k}>
               <div className="photos--desc">
@@ -46,7 +43,7 @@ function App() {
                     height="100%"
                   />
                 </div>
-                <p><a href={i.photographer_url} target="_blank">{i.photographer}</a></p>
+                <p><a href={i.photographer_url} target="_blank" rel="noopener noreferrer">{i.photographer}</a></p>
               </div>
           </div>  
           )
@@ -57,8 +54,3 @@ function App() {
 }
 
 export default App;
-
-/*
--- passar a requisição para async/await
--- adicionar loading
-*/

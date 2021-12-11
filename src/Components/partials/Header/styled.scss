@@ -8,29 +8,11 @@ $medium: '900px';
 
     .header--area {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
 
         .header--title h1 {
             font-family: 'Playfair Display', serif;
-        }
-
-        .header--search {
-            padding: 0;
-            border-bottom: 2px solid rgb(41, 39, 39);
-            display: flex;
-            justify-content: left;
-            align-items: flex-start;
-
-            input {
-                background: transparent;
-                border: none;
-                padding: 15px 15px 5px 10px;
-
-                &:focus {
-                    outline: none;
-                }
-            }
         }
 
         @media screen and (max-width: $small) {
@@ -42,10 +24,6 @@ $medium: '900px';
             .header--title h1 {
                 font-size: 35px;
                 margin-bottom: 10px;
-            }
-
-            .header--search {
-                width: 100%;
             }
         }
     }
